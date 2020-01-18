@@ -1,0 +1,14 @@
+{
+  "name": "abc",
+  "version": "1.0.0",
+  "description": "*English | [中文](README.zh.md)*",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "agora-rtc-sdk": "^3.0.0"
+  }
+}
