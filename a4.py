@@ -158,7 +158,7 @@ def listen_print_loop(responses):
 def main():
     # See http://g.co/cloud/speech/docs/languages
     # for a list of supported languages.
-    language_code = 'en-US'  # a BCP-47 language tag
+    language_code = 'en-IN'  # a BCP-47 language tag
 
     client = speech.SpeechClient.from_service_account_json('PrestiSolutions-fb3de2002b43.json')
     config = speech.types.RecognitionConfig(
