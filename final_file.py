@@ -11,6 +11,19 @@ Created on Sat Jan 18 20:00:49 2020
 
 @author: Gulshan Rana
 """
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jan 19 04:24:48 2020
+
+@author: Gulshan Rana
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jan 18 20:00:49 2020
+
+@author: Gulshan Rana
+"""
 
 from google.cloud import speech_v1
 from google.cloud.speech_v1 import enums
@@ -63,7 +76,7 @@ def sample_recognize(local_file_path):
                end_time.append(word.end_time.seconds+word.end_time.nanos*(10**-9))
     return start_time,end_time,timeline
 
-input_audio='aud_file.aac'
+input_audio='inaudio.aac'
 
 os.system(('ffmpeg -i {} -vn out1.flac mono.wav ').format(input_audio))    #  for converting format
 os.system('ffmpeg -i out1.flac -ac 1 mono.flac ')     #for creating single channel of audio
@@ -179,6 +192,16 @@ else:
     combined_sounds.export("combined_sounds.wav", format="wav")
     print('else_winner')
 
+
+split_profaned_audio(audio_path,end_time[-1]+0.1,timeline[-1]+0.1,len_-1)
+sound="audio"+str(len_)+".wav"
+input_audio = r"%s"%sound
+sub_sound = AudioSegment.from_wav(input_audio)
+
+        
+combined_sounds=combined_sounds+sub_sound
+        
+combined_sounds.export("combined_sounds.wav", format="wav")
 '''
 split_profaned_audio(audio_path,7.5,2.5,0)
 sound1 = AudioSegment.from_wav("audio1.wav")
